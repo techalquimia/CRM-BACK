@@ -1,0 +1,37 @@
+{
+  "version": 2,
+  "dgSpecHash": "hRRMNFkYu6w=",
+  "success": false,
+  "projectFilePath": "/Users/rasecmc/Documents/GitHub/CRM-BACK/RouteEvidence/RouteEvidence.csproj",
+  "expectedPackageFiles": [
+    "/Users/rasecmc/.nuget/packages/microsoft.netcore.app.ref/8.0.24/microsoft.netcore.app.ref.8.0.24.nupkg.sha512",
+    "/Users/rasecmc/.nuget/packages/microsoft.aspnetcore.app.ref/8.0.24/microsoft.aspnetcore.app.ref.8.0.24.nupkg.sha512",
+    "/Users/rasecmc/.nuget/packages/microsoft.netcore.app.host.osx-arm64/8.0.24/microsoft.netcore.app.host.osx-arm64.8.0.24.nupkg.sha512"
+  ],
+  "logs": [
+    {
+      "code": "NU1301",
+      "level": "Error",
+      "message": "No se pudo recuperar información sobre \"Pomelo.EntityFrameworkCore.MySql\" del origen remoto \"https://api.nuget.org/v3-flatcontainer/pomelo.entityframeworkcore.mysql/index.json\".\n  nodename nor servname provided, or not known (api.nuget.org:443)\n  nodename nor servname provided, or not known",
+      "projectPath": "/Users/rasecmc/Documents/GitHub/CRM-BACK/RouteEvidence/RouteEvidence.csproj",
+      "filePath": "/Users/rasecmc/Documents/GitHub/CRM-BACK/RouteEvidence/RouteEvidence.csproj",
+      "targetGraphs": []
+    },
+    {
+      "code": "NU1301",
+      "level": "Error",
+      "message": "No se pudo recuperar información sobre \"Microsoft.EntityFrameworkCore.Design\" del origen remoto \"https://api.nuget.org/v3-flatcontainer/microsoft.entityframeworkcore.design/index.json\".\n  nodename nor servname provided, or not known (api.nuget.org:443)\n  nodename nor servname provided, or not known",
+      "projectPath": "/Users/rasecmc/Documents/GitHub/CRM-BACK/RouteEvidence/RouteEvidence.csproj",
+      "filePath": "/Users/rasecmc/Documents/GitHub/CRM-BACK/RouteEvidence/RouteEvidence.csproj",
+      "targetGraphs": []
+    },
+    {
+      "code": "NU1301",
+      "level": "Error",
+      "message": "No se pudo recuperar información sobre \"Microsoft.AspNetCore.Authentication.JwtBearer\" del origen remoto \"https://api.nuget.org/v3-flatcontainer/microsoft.aspnetcore.authentication.jwtbearer/index.json\".\n  nodename nor servname provided, or not known (api.nuget.org:443)\n  nodename nor servname provided, or not known",
+      "projectPath": "/Users/rasecmc/Documents/GitHub/CRM-BACK/RouteEvidence/RouteEvidence.csproj",
+      "filePath": "/Users/rasecmc/Documents/GitHub/CRM-BACK/RouteEvidence/RouteEvidence.csproj",
+      "targetGraphs": []
+    }
+  ]
+}
