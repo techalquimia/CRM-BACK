@@ -6,6 +6,7 @@ import com.google.cloud.storage.Storage;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -13,18 +14,17 @@ import java.io.IOException;
 import java.util.UUID;
 
 @Service
+@ConditionalOnProperty(name = "gcp.enabled", havingValue = "true")
 @RequiredArgsConstructor
 @Slf4j
-public class GcpStorageService {
+public class GcpStorageService implements StorageService {
 
     private final Storage storage;
 
     @Value("${gcp.storage.bucket-name}")
     private String bucketName;
 
-    /**
-     * Sube una imagen a GCP Cloud Storage y retorna la URL pública (gs:// o https://)
-     */
+    @Override
     public String uploadImage(MultipartFile file, String folder, UUID userId) throws IOException {
         String originalFilename = file.getOriginalFilename();
         String extension = originalFilename != null && originalFilename.contains(".")
@@ -38,8 +38,6 @@ public class GcpStorageService {
                 .build();
 
         storage.create(blobInfo, file.getBytes());
-
-        // Retorna URL gs:// para referencia al bucket
         return String.format("gs://%s/%s", bucketName, blobName);
     }
 }

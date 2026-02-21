@@ -49,6 +49,9 @@ public class TicketExtractionService {
 
             String fullText = annotateResponse.getFullTextAnnotation().getText();
             return parseTicketData(fullText);
+        } catch (IOException | RuntimeException e) {
+            log.warn("OCR no disponible (credenciales GCP no configuradas o error): {}", e.getMessage());
+            return new TicketData(null, null, null);
         }
     }
 

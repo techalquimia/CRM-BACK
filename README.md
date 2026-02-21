@@ -39,11 +39,22 @@ API/Microservicio en Java + Spring Boot para registro de usuarios y envío de ev
 | tara | Double | Tara |
 | peso_neto | Double | Peso neto (peso_total = tara + peso_neto) |
 
+## Documentación Swagger
+
+- **Swagger UI:** http://localhost:8080/swagger-ui.html
+- **OpenAPI JSON:** http://localhost:8080/v3/api-docs
+
+Para probar endpoints protegidos en Swagger UI, usar el botón **Authorize** con credenciales Basic (email y contraseña de un usuario registrado).
+
 ## Endpoints
 
 ### Usuario
 
 - `POST /api/v1/users/register` - Registro (público)
+
+### Catálogo de tipos
+
+- `GET /api/v1/evidence-types` - Listar tipos de evidencia (público)
 
 ### Evidencias (requieren autenticación Basic)
 
@@ -57,7 +68,17 @@ API/Microservicio en Java + Spring Boot para registro de usuarios y envío de ev
 - `image` - Archivo de imagen
 - `dateTime` - ISO 8601 (ej: 2025-02-18T14:30:00Z)
 - `latitude`, `longitude` - Opcionales
-- `evidenceType` - `TICKET` u otros (ej: `OTHER`, `RECEIPT`)
+- `evidenceType` - Código del catálogo: `WEIGHT_TICKET`, `TRUCK_PHOTO`, `SEAL_PHOTO`, `DELIVERY_PROOF`, `INCIDENT_REPORT`
+
+### Tipos de evidencia (catálogo)
+
+| Código | Descripción | OCR |
+|--------|-------------|-----|
+| WEIGHT_TICKET | Ticket de báscula | Sí (peso total, tara, peso neto) |
+| TRUCK_PHOTO | Foto del camión | No |
+| SEAL_PHOTO | Foto del sello/precinto | No |
+| DELIVERY_PROOF | Prueba de entrega firmada | No |
+| INCIDENT_REPORT | Reporte de incidente | No |
 
 ## Configuración
 
@@ -74,7 +95,9 @@ API/Microservicio en Java + Spring Boot para registro de usuarios y envío de ev
 
 1. **IntelliJ IDEA**: Abrir el proyecto como proyecto Gradle; IDEA descargará el wrapper automáticamente.
 2. MariaDB en ejecución (o `docker-compose up -d mariadb`)
-3. Credenciales GCP configuradas (`GOOGLE_APPLICATION_CREDENTIALS` apuntando al JSON de cuenta de servicio)
+3. Credenciales GCP configuradas:
+   - Opción A: `./run-with-gcp.sh` (usa por defecto `~/Downloads/t-bounty-482716-d4-5f95f2d3e6ad.json`)
+   - Opción B: `export GOOGLE_APPLICATION_CREDENTIALS="/ruta/a/tu-credenciales.json"` y luego `./gradlew bootRun`
 4. `./gradlew bootRun` (o ejecutar `LogisticsApiApplication` desde IDEA)
 
 ### Docker

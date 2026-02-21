@@ -30,9 +30,20 @@ spring:
       max-request-size: 10MB
 
 gcp:
+  enabled: ${GCP_ENABLED:false}
   storage:
     bucket-name: ${GCP_BUCKET_NAME:logistics-evidence-bucket}
 
+springdoc:
+  api-docs:
+    path: /v3/api-docs
+  swagger-ui:
+    path: /swagger-ui.html
+    operationsSorter: method
+    tagsSorter: alpha
+
 app:
+  storage:
+    local-path: ${APP_STORAGE_PATH:./uploads}
   api:
     prefix: /api/v1

@@ -19,7 +19,7 @@ public class Evidence {
     @GeneratedValue(strategy = GenerationType.UUID)
     private UUID id;
 
-    /** URL de la imagen en GCP Cloud Storage (gs://bucket/path o https://...) */
+    /** URL de la imagen en GCP Cloud Storage o almacenamiento local */
     @Column(name = "image_url", nullable = false, length = 1024)
     private String imageUrl;
 
@@ -29,10 +29,12 @@ public class Evidence {
     private Double latitude;
     private Double longitude;
 
-    @Column(name = "evidence_type", nullable = false, length = 50)
-    private String evidenceType;
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "evidence_type_id", nullable = false)
+    private EvidenceTypeCatalog evidenceTypeCatalog;
 
     @Column(name = "is_synced", nullable = false)
+    @Builder.Default
     private Boolean isSynced = false;
 
     @Column(name = "created_at", nullable = false, updatable = false)

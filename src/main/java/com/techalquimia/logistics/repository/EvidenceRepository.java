@@ -10,5 +10,5 @@ public interface EvidenceRepository extends JpaRepository<Evidence, UUID> {
 
     List<Evidence> findByUserIdOrderByCreatedAtDesc(UUID userId);
 
-    List<Evidence> findByUserIdAndEvidenceTypeOrderByCreatedAtDesc(UUID userId, String evidenceType);
+    List<Evidence> findByUserIdAndEvidenceTypeCatalog_CodeOrderByCreatedAtDesc(UUID userId, String evidenceTypeCode);
 }

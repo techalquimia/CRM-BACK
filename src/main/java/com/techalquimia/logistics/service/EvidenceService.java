@@ -2,8 +2,11 @@ package com.techalquimia.logistics.service;
 
 import com.techalquimia.logistics.dto.EvidenceResponse;
 import com.techalquimia.logistics.entity.Evidence;
+import com.techalquimia.logistics.entity.EvidenceTypeCatalog;
 import com.techalquimia.logistics.entity.TicketWeight;
+import com.techalquimia.logistics.exception.EvidenceTypeNotFoundException;
 import com.techalquimia.logistics.repository.EvidenceRepository;
+import com.techalquimia.logistics.repository.EvidenceTypeCatalogRepository;
 import com.techalquimia.logistics.service.TicketExtractionService.TicketData;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -20,28 +23,30 @@ import java.util.stream.Collectors;
 @RequiredArgsConstructor
 public class EvidenceService {
 
-    private static final String EVIDENCE_TYPE_TICKET = "TICKET";
-
     private final EvidenceRepository evidenceRepository;
-    private final GcpStorageService gcpStorageService;
+    private final EvidenceTypeCatalogRepository evidenceTypeCatalogRepository;
+    private final StorageService storageService;
     private final TicketExtractionService ticketExtractionService;
 
     @Transactional
     public EvidenceResponse createEvidence(UUID userId, MultipartFile image, Instant dateTime,
-                                          Double latitude, Double longitude, String evidenceType) throws IOException {
-        String imageUrl = gcpStorageService.uploadImage(image, "evidences", userId);
+                                          Double latitude, Double longitude, String evidenceTypeCode) throws IOException {
+        EvidenceTypeCatalog typeCatalog = evidenceTypeCatalogRepository.findByCode(evidenceTypeCode)
+                .orElseThrow(() -> new EvidenceTypeNotFoundException(evidenceTypeCode));
+
+        String imageUrl = storageService.uploadImage(image, "evidences", userId);
 
         Evidence evidence = Evidence.builder()
                 .imageUrl(imageUrl)
                 .dateTime(dateTime)
                 .latitude(latitude)
                 .longitude(longitude)
-                .evidenceType(evidenceType)
+                .evidenceTypeCatalog(typeCatalog)
                 .isSynced(false)
                 .userId(userId)
                 .build();
 
-        if (EVIDENCE_TYPE_TICKET.equalsIgnoreCase(evidenceType)) {
+        if (Boolean.TRUE.equals(typeCatalog.getRequiresOcr())) {
             TicketData ticketData = ticketExtractionService.extractFromImage(image);
             TicketWeight ticketWeight = TicketWeight.builder()
                     .pesoTotal(ticketData.pesoTotal())
@@ -65,8 +70,8 @@ public class EvidenceService {
     }
 
     @Transactional(readOnly = true)
-    public List<EvidenceResponse> getEvidencesByUserAndType(UUID userId, String evidenceType) {
-        return evidenceRepository.findByUserIdAndEvidenceTypeOrderByCreatedAtDesc(userId, evidenceType)
+    public List<EvidenceResponse> getEvidencesByUserAndType(UUID userId, String evidenceTypeCode) {
+        return evidenceRepository.findByUserIdAndEvidenceTypeCatalog_CodeOrderByCreatedAtDesc(userId, evidenceTypeCode)
                 .stream()
                 .map(this::mapToResponse)
                 .collect(Collectors.toList());
@@ -92,13 +97,15 @@ public class EvidenceService {
     }
 
     private EvidenceResponse mapToResponse(Evidence e) {
+        EvidenceTypeCatalog catalog = e.getEvidenceTypeCatalog();
         EvidenceResponse.EvidenceResponseBuilder builder = EvidenceResponse.builder()
                 .id(e.getId())
                 .imageUrl(e.getImageUrl())
                 .dateTime(e.getDateTime())
                 .latitude(e.getLatitude())
                 .longitude(e.getLongitude())
-                .evidenceType(e.getEvidenceType())
+                .evidenceType(catalog.getCode())
+                .evidenceTypeName(catalog.getName())
                 .isSynced(e.getIsSynced())
                 .createdAt(e.getCreatedAt());
 

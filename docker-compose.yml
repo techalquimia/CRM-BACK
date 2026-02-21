@@ -28,8 +28,9 @@ services:
       DB_NAME: logistics
       DB_USER: logistics
       DB_PASSWORD: logistics123
+      GCP_ENABLED: ${GCP_ENABLED:-false}
       GCP_BUCKET_NAME: ${GCP_BUCKET_NAME:-logistics-evidence-bucket}
-      GCP_PROJECT_ID: ${GCP_PROJECT_ID}
+      GCP_PROJECT_ID: ${GCP_PROJECT_ID:-}
     depends_on:
       mariadb:
         condition: service_healthy
