@@ -7,7 +7,7 @@ on:
 
 env:
   REGION: northamerica-south1
-  SERVICE_NAME: api-service
+  SERVICE_NAME: route-evidence-api
 
 jobs:
   deploy:
