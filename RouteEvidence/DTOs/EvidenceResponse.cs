@@ -13,5 +13,6 @@ public record EvidenceResponse(
     Guid UnitId,
     double? TotalWeight,
     double? Tara,
-    double? NetWeight
+    double? NetWeight,
+    string? OcrText
 );

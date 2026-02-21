@@ -60,4 +60,10 @@ public class Evidence
     /// Ticket-specific: Net weight (peso). TotalWeight = Tara + NetWeight.
     /// </summary>
     public double? NetWeight { get; set; }
+
+    /// <summary>
+    /// Raw text extracted from ticket image via Google Cloud Vision OCR.
+    /// </summary>
+    [MaxLength(8000)]
+    public string? OcrText { get; set; }
 }

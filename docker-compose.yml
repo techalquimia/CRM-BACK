@@ -1,8 +1,8 @@
 services:
   api:
     build:
-      context: .
-      dockerfile: RouteEvidence/Dockerfile
+      context: ./RouteEvidence
+      dockerfile: Dockerfile
     container_name: route-evidence-api
     ports:
       - "8080:8080"
@@ -11,6 +11,9 @@ services:
       - ASPNETCORE_URLS=http://+:8080
       - ConnectionStrings__DefaultConnection=Server=mariadb;Database=RouteEvidence;User=root;Password=routeevidence2025;
       - Jwt__Key=YourSecretKeyMin32CharactersForHS256!
+      - GOOGLE_APPLICATION_CREDENTIALS=/app/gcp-credentials.json
+    volumes:
+      - /Users/rasecmc/Downloads/gcp-credentials.json:/app/gcp-credentials.json:ro
     depends_on:
       mariadb:
         condition: service_healthy

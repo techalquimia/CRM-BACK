@@ -15,15 +15,18 @@ public class EvidenceController : ControllerBase
 {
     private readonly RouteEvidenceDbContext _db;
     private readonly IGcpStorageService _storageService;
+    private readonly ITicketOcrService _ticketOcrService;
     private readonly ILogger<EvidenceController> _logger;
 
     public EvidenceController(
         RouteEvidenceDbContext db,
         IGcpStorageService storageService,
+        ITicketOcrService ticketOcrService,
         ILogger<EvidenceController> logger)
     {
         _db = db;
         _storageService = storageService;
+        _ticketOcrService = ticketOcrService;
         _logger = logger;
     }
 
@@ -90,6 +93,46 @@ public class EvidenceController : ControllerBase
         await using var stream = request.Image.OpenReadStream();
         var (bucket, key) = await _storageService.UploadAsync(stream, objectKey, contentType, ct);
 
+        double? totalWeight = request.TotalWeight;
+        double? tara = request.Tara;
+        double? netWeight = request.NetWeight;
+        string? ocrText = null;
+
+        var catalogItem = await _db.EvidenceCatalog
+            .AsNoTracking()
+            .FirstOrDefaultAsync(c => c.Type == request.EvidenceType, ct);
+        var useOcr = catalogItem?.Ocr == true || string.Equals(request.EvidenceType, "ticket", StringComparison.OrdinalIgnoreCase);
+
+        if (useOcr)
+        {
+            try
+            {
+                var ocrResult = await _ticketOcrService.ExtractTicketDataAsync(bucket, key, ct);
+                ocrText = ocrResult.FullText;
+
+                if (!totalWeight.HasValue && ocrResult.TotalWeight.HasValue)
+                    totalWeight = ocrResult.TotalWeight;
+                if (!tara.HasValue && ocrResult.Tara.HasValue)
+                    tara = ocrResult.Tara;
+                if (!netWeight.HasValue && ocrResult.NetWeight.HasValue)
+                    netWeight = ocrResult.NetWeight;
+
+                if (totalWeight.HasValue || tara.HasValue || netWeight.HasValue)
+                    _logger.LogInformation("Extracted ticket data: Total={Total}, Tara={Tara}, Net={Net}", totalWeight, tara, netWeight);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogWarning(ex, "Failed to extract ticket data from image");
+            }
+        }
+
+        if (totalWeight.HasValue && tara.HasValue && netWeight.HasValue)
+        {
+            var expectedTotal = tara.Value + netWeight.Value;
+            if (Math.Abs(totalWeight.Value - expectedTotal) > 0.001)
+                return BadRequest(new { Message = "TotalWeight must equal Tara + NetWeight" });
+        }
+
         var evidence = new Evidence
         {
             GcsBucket = bucket,
@@ -100,9 +143,10 @@ public class EvidenceController : ControllerBase
             EvidenceType = request.EvidenceType,
             UnitId = request.UnitId,
             IsSynced = false,
-            TotalWeight = request.TotalWeight,
-            Tara = request.Tara,
-            NetWeight = request.NetWeight
+            TotalWeight = totalWeight,
+            Tara = tara,
+            NetWeight = netWeight,
+            OcrText = ocrText
         };
 
         _db.Evidence.Add(evidence);
@@ -214,5 +258,5 @@ public class EvidenceController : ControllerBase
     }
 
     private static EvidenceResponse MapToResponse(Evidence e) =>
-        new(e.Id, e.GcsBucket, e.GcsObjectKey, e.DateTime, e.Latitude, e.Longitude, e.EvidenceType, e.IsSynced, e.CreatedAt, e.UnitId, e.TotalWeight, e.Tara, e.NetWeight);
+        new(e.Id, e.GcsBucket, e.GcsObjectKey, e.DateTime, e.Latitude, e.Longitude, e.EvidenceType, e.IsSynced, e.CreatedAt, e.UnitId, e.TotalWeight, e.Tara, e.NetWeight, e.OcrText);
 }

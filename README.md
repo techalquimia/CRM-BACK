@@ -47,6 +47,8 @@ In `RouteEvidence/appsettings.json`:
 
 Set `GOOGLE_APPLICATION_CREDENTIALS` to the path of your GCP service account JSON key file.
 
+**Google Cloud Vision** (for ticket OCR): The service account must have the `roles/vision.user` role for Document Text Detection. When creating evidence with `EvidenceType=ticket` or a catalog type with `Ocr=true`, the image is sent to Vision API to extract weight values (peso total, tara, peso neto).
+
 ### 2. Database
 
 Install EF Core tools (if not installed):
@@ -89,6 +91,20 @@ docker compose up -d --build
 ```bash
 cd RouteEvidence
 dotnet ef database update
+```
+
+**Create tables manually** (alternative to EF migrations):
+
+```bash
+./scripts/run-create-tables.sh
+# Or with local MySQL: ./scripts/run-create-tables.sh local
+```
+
+**Seed data** (EvidenceCatalog types and sample Units):
+
+```bash
+./scripts/run-seed.sh
+# Or with local MySQL: ./scripts/run-seed.sh local
 ```
 
 ## API Structure
@@ -170,6 +186,10 @@ RouteEvidence/
 
 - **CodeQL** – GitHub Actions workflow for security analysis
 - **EditorConfig** – Consistent code style
+
+## Deploy to GCP Cloud Run
+
+Push to `main`/`master` triggers deployment via GitHub Actions. See [docs/GCP-DEPLOY-SETUP.md](docs/GCP-DEPLOY-SETUP.md) for setup.
 
 ## License
 

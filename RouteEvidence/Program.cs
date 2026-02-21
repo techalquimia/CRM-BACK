@@ -8,8 +8,14 @@ using RouteEvidence.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
+// GCP credentials - config or env GOOGLE_APPLICATION_CREDENTIALS
+var credsPath = builder.Configuration["Gcp:CredentialsPath"];
+if (!string.IsNullOrWhiteSpace(credsPath) && File.Exists(credsPath))
+    Environment.SetEnvironmentVariable("GOOGLE_APPLICATION_CREDENTIALS", credsPath);
+
 builder.Services.AddControllers();
 builder.Services.AddScoped<IGcpStorageService, GcpStorageService>();
+builder.Services.AddScoped<ITicketOcrService, TicketOcrService>();
 
 // MariaDB with Entity Framework Core
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection")
