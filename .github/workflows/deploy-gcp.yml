@@ -6,7 +6,7 @@ on:
   workflow_dispatch:
 
 env:
-  REGION: us-central1
+  REGION: northamerica-south1
   SERVICE_NAME: route-evidence-api
 
 jobs:
