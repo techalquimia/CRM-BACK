@@ -6,6 +6,7 @@ import io.swagger.v3.oas.models.info.Contact;
 import io.swagger.v3.oas.models.info.Info;
 import io.swagger.v3.oas.models.security.SecurityRequirement;
 import io.swagger.v3.oas.models.security.SecurityScheme;
+import org.springdoc.core.models.GroupedOpenApi;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -34,5 +35,13 @@ public class OpenApiConfig {
                                         .type(SecurityScheme.Type.HTTP)
                                         .scheme("basic")
                                         .description("Autenticación Basic con email y contraseña")));
+    }
+
+    @Bean
+    public GroupedOpenApi allApis() {
+        return GroupedOpenApi.builder()
+                .group("Todas las APIs")
+                .pathsToMatch("/api/**")
+                .build();
     }
 }

@@ -41,6 +41,7 @@ springdoc:
     path: /swagger-ui.html
     operationsSorter: method
     tagsSorter: alpha
+  packages-to-scan: com.techalquimia.logistics.controller
 
 app:
   storage:
