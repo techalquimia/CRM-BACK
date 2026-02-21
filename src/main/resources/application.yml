@@ -43,6 +43,10 @@ springdoc:
     tagsSorter: alpha
   packages-to-scan: com.techalquimia.logistics.controller
 
+jwt:
+  secret: ${JWT_SECRET:logistics-api-secret-key-min-32-chars-long-for-hs256}
+  expiration-ms: ${JWT_EXPIRATION_MS:86400000}
+
 app:
   storage:
     local-path: ${APP_STORAGE_PATH:./uploads}

@@ -15,13 +15,14 @@ public class OpenApiConfig {
 
     @Bean
     public OpenAPI openAPI() {
-        final String securitySchemeName = "basicAuth";
+        final String securitySchemeName = "bearerAuth";
 
         return new OpenAPI()
                 .info(new Info()
                         .title("Logistics API - Evidencias de Viaje")
                         .description("API para registro de usuarios y envío de evidencias de viaje. " +
-                                "Las evidencias pueden ser tickets (con extracción OCR) u otros tipos tipificados.")
+                                "Las evidencias pueden ser tickets (con extracción OCR) u otros tipos tipificados. " +
+                                "Autenticación por JWT: usar POST /api/v1/auth/login y enviar el token en header: Authorization: Bearer <token>")
                         .version("1.0.0")
                         .contact(new Contact()
                                 .name("TechAlquimia")
@@ -33,8 +34,9 @@ public class OpenApiConfig {
                                 new SecurityScheme()
                                         .name(securitySchemeName)
                                         .type(SecurityScheme.Type.HTTP)
-                                        .scheme("basic")
-                                        .description("Autenticación Basic con email y contraseña")));
+                                        .scheme("bearer")
+                                        .bearerFormat("JWT")
+                                        .description("Token JWT obtenido de POST /api/v1/auth/login")));
     }
 
     @Bean

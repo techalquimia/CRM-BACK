@@ -44,9 +44,13 @@ API/Microservicio en Java + Spring Boot para registro de usuarios y envío de ev
 - **Swagger UI:** http://localhost:8080/swagger-ui.html
 - **OpenAPI JSON:** http://localhost:8080/v3/api-docs
 
-Para probar endpoints protegidos en Swagger UI, usar el botón **Authorize** con credenciales Basic (email y contraseña de un usuario registrado).
+Para probar endpoints protegidos en Swagger UI: 1) Llamar a `POST /api/v1/auth/login` con email y contraseña, 2) Copiar el token de la respuesta, 3) Usar **Authorize** → Bearer → pegar el token.
 
 ## Endpoints
+
+### Autenticación
+
+- `POST /api/v1/auth/login` - Login con email y contraseña, devuelve token JWT (público)
 
 ### Usuario
 
@@ -56,7 +60,7 @@ Para probar endpoints protegidos en Swagger UI, usar el botón **Authorize** con
 
 - `GET /api/v1/evidence-types` - Listar tipos de evidencia (público)
 
-### Evidencias (requieren autenticación Basic)
+### Evidencias (requieren token JWT en header: `Authorization: Bearer <token>`)
 
 - `POST /api/v1/evidences` - Crear evidencia (multipart/form-data)
 - `GET /api/v1/evidences` - Listar evidencias (opcional: ?evidenceType=TICKET)
@@ -90,6 +94,8 @@ Para probar endpoints protegidos en Swagger UI, usar el botón **Authorize** con
 | GCP_BUCKET_NAME | Nombre del bucket en GCP |
 | GCP_PROJECT_ID | ID del proyecto GCP |
 | GOOGLE_APPLICATION_CREDENTIALS | Ruta al JSON de credenciales de servicio |
+| JWT_SECRET | Clave secreta para firmar JWT (mín. 32 caracteres) |
+| JWT_EXPIRATION_MS | Expiración del token en ms (default: 24h) |
 
 ### Ejecución local
 
