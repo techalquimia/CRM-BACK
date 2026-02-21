@@ -62,7 +62,24 @@ For GCP Storage and Vision, Cloud Run uses the **default service account** of th
 
 Or configure Workload Identity and attach a custom service account to the Cloud Run service.
 
-## 6. Post-Deploy
+## 6. Service Account Permissions (Critical)
+
+The GitHub Actions service account (GCP_SA_KEY) must have:
+- **Cloud Build Editor** – to trigger builds
+- **Cloud Run Admin** – to deploy
+- **Service Account User** – to deploy as Cloud Run service
+- **Storage Admin** (or **Artifact Registry Writer**) – to push images
+
+In IAM: add these roles to the `github-actions-deploy` service account.
+
+## 7. Post-Deploy
 
 - Run migrations against your Cloud SQL database.
 - Run the seed script: `scripts/seed-data.sql`.
+
+## Troubleshooting
+
+**"failed to deploy"**: Check the GitHub Actions logs for the Cloud Build step. Common causes:
+- Missing roles on the service account (see §6)
+- Enable **Container Registry API** (gcr.io) or **Artifact Registry API**
+- Ensure `GCP_REGION` matches a valid region (e.g. `us-central1`, `southamerica-east1`)
