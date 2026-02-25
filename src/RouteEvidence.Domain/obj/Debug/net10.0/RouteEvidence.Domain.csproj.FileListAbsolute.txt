@@ -1,0 +1,12 @@
+/Users/rasecmc/Documents/GitHub/CRM-BACK/src/RouteEvidence.Domain/obj/Debug/net10.0/RouteEvidence.Domain.GeneratedMSBuildEditorConfig.editorconfig
+/Users/rasecmc/Documents/GitHub/CRM-BACK/src/RouteEvidence.Domain/obj/Debug/net10.0/RouteEvidence.Domain.AssemblyInfoInputs.cache
+/Users/rasecmc/Documents/GitHub/CRM-BACK/src/RouteEvidence.Domain/obj/Debug/net10.0/RouteEvidence.Domain.AssemblyInfo.cs
+/Users/rasecmc/Documents/GitHub/CRM-BACK/src/RouteEvidence.Domain/obj/Debug/net10.0/RouteEvidence.Domain.csproj.CoreCompileInputs.cache
+/Users/rasecmc/Documents/GitHub/CRM-BACK/src/RouteEvidence.Domain/obj/Debug/net10.0/RouteEvidence.Domain.sourcelink.json
+/Users/rasecmc/Documents/GitHub/CRM-BACK/src/RouteEvidence.Domain/bin/Debug/net10.0/RouteEvidence.Domain.deps.json
+/Users/rasecmc/Documents/GitHub/CRM-BACK/src/RouteEvidence.Domain/bin/Debug/net10.0/RouteEvidence.Domain.dll
+/Users/rasecmc/Documents/GitHub/CRM-BACK/src/RouteEvidence.Domain/bin/Debug/net10.0/RouteEvidence.Domain.pdb
+/Users/rasecmc/Documents/GitHub/CRM-BACK/src/RouteEvidence.Domain/obj/Debug/net10.0/RouteEvidence.Domain.dll
+/Users/rasecmc/Documents/GitHub/CRM-BACK/src/RouteEvidence.Domain/obj/Debug/net10.0/refint/RouteEvidence.Domain.dll
+/Users/rasecmc/Documents/GitHub/CRM-BACK/src/RouteEvidence.Domain/obj/Debug/net10.0/RouteEvidence.Domain.pdb
+/Users/rasecmc/Documents/GitHub/CRM-BACK/src/RouteEvidence.Domain/obj/Debug/net10.0/ref/RouteEvidence.Domain.dll

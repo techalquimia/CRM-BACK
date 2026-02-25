@@ -1,0 +1,8 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/RouteEvidence.API/RouteEvidence.API.csproj" />
+    <Project Path="src/RouteEvidence.Application/RouteEvidence.Application.csproj" />
+    <Project Path="src/RouteEvidence.Domain/RouteEvidence.Domain.csproj" />
+    <Project Path="src/RouteEvidence.Infrastructure/RouteEvidence.Infrastructure.csproj" />
+  </Folder>
+</Solution>
