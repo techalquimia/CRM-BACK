@@ -1681,7 +1681,7 @@
     ]
   },
   "packageFolders": {
-    "/var/folders/2k/9wrj29916lz0rsqfd8pw3zb00000gn/T/cursor-sandbox-cache/503d33f1deff19a22c8331bdce9c3ea8/nuget": {}
+    "/Users/rasecmc/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
@@ -1689,7 +1689,7 @@
       "projectUniqueName": "/Users/rasecmc/Documents/GitHub/CRM-BACK/src/RouteEvidence.API/RouteEvidence.API.csproj",
       "projectName": "RouteEvidence.API",
       "projectPath": "/Users/rasecmc/Documents/GitHub/CRM-BACK/src/RouteEvidence.API/RouteEvidence.API.csproj",
-      "packagesPath": "/var/folders/2k/9wrj29916lz0rsqfd8pw3zb00000gn/T/cursor-sandbox-cache/503d33f1deff19a22c8331bdce9c3ea8/nuget",
+      "packagesPath": "/Users/rasecmc/.nuget/packages/",
       "outputPath": "/Users/rasecmc/Documents/GitHub/CRM-BACK/src/RouteEvidence.API/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
@@ -2197,7 +2197,7 @@
       "code": "NU1603",
       "level": "Warning",
       "warningLevel": 1,
-      "message": "RouteEvidence.API depende de Microsoft.IdentityModel.Tokens (>= 8.5.1), pero no se encontró Microsoft.IdentityModel.Tokens 8.5.1. Microsoft.IdentityModel.Tokens 8.6.0 se resolvió en su lugar.",
+      "message": "RouteEvidence.API depends on Microsoft.IdentityModel.Tokens (>= 8.5.1) but Microsoft.IdentityModel.Tokens 8.5.1 was not found. Microsoft.IdentityModel.Tokens 8.6.0 was resolved instead.",
       "libraryId": "Microsoft.IdentityModel.Tokens",
       "targetGraphs": [
         "net10.0"
@@ -2207,7 +2207,7 @@
       "code": "NU1603",
       "level": "Warning",
       "warningLevel": 1,
-      "message": "RouteEvidence.API depende de System.IdentityModel.Tokens.Jwt (>= 8.5.1), pero no se encontró System.IdentityModel.Tokens.Jwt 8.5.1. System.IdentityModel.Tokens.Jwt 8.6.0 se resolvió en su lugar.",
+      "message": "RouteEvidence.API depends on System.IdentityModel.Tokens.Jwt (>= 8.5.1) but System.IdentityModel.Tokens.Jwt 8.5.1 was not found. System.IdentityModel.Tokens.Jwt 8.6.0 was resolved instead.",
       "libraryId": "System.IdentityModel.Tokens.Jwt",
       "targetGraphs": [
         "net10.0"

@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("RouteEvidence.Application")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+6e2aeb4e4bb286e55456b6cb5cbd2680b874a589")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9cad1d2148a81c8653e05db440ae8c4370a08feb")]
 [assembly: System.Reflection.AssemblyProductAttribute("RouteEvidence.Application")]
 [assembly: System.Reflection.AssemblyTitleAttribute("RouteEvidence.Application")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

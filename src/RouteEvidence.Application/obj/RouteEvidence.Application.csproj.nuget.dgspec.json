@@ -10,7 +10,7 @@
         "projectUniqueName": "/Users/rasecmc/Documents/GitHub/CRM-BACK/src/RouteEvidence.Application/RouteEvidence.Application.csproj",
         "projectName": "RouteEvidence.Application",
         "projectPath": "/Users/rasecmc/Documents/GitHub/CRM-BACK/src/RouteEvidence.Application/RouteEvidence.Application.csproj",
-        "packagesPath": "/var/folders/2k/9wrj29916lz0rsqfd8pw3zb00000gn/T/cursor-sandbox-cache/503d33f1deff19a22c8331bdce9c3ea8/nuget",
+        "packagesPath": "/Users/rasecmc/.nuget/packages/",
         "outputPath": "/Users/rasecmc/Documents/GitHub/CRM-BACK/src/RouteEvidence.Application/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
@@ -347,7 +347,7 @@
         "projectUniqueName": "/Users/rasecmc/Documents/GitHub/CRM-BACK/src/RouteEvidence.Domain/RouteEvidence.Domain.csproj",
         "projectName": "RouteEvidence.Domain",
         "projectPath": "/Users/rasecmc/Documents/GitHub/CRM-BACK/src/RouteEvidence.Domain/RouteEvidence.Domain.csproj",
-        "packagesPath": "/var/folders/2k/9wrj29916lz0rsqfd8pw3zb00000gn/T/cursor-sandbox-cache/503d33f1deff19a22c8331bdce9c3ea8/nuget",
+        "packagesPath": "/Users/rasecmc/.nuget/packages/",
         "outputPath": "/Users/rasecmc/Documents/GitHub/CRM-BACK/src/RouteEvidence.Domain/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
