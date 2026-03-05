@@ -1,0 +1,15 @@
+/Users/rasecmc/Documents/GitHub/CRM-BACK/WorkflowApi/src/WorkflowApi.Application/bin/Debug/net7.0/WorkflowApi.Application.deps.json
+/Users/rasecmc/Documents/GitHub/CRM-BACK/WorkflowApi/src/WorkflowApi.Application/bin/Debug/net7.0/WorkflowApi.Application.dll
+/Users/rasecmc/Documents/GitHub/CRM-BACK/WorkflowApi/src/WorkflowApi.Application/bin/Debug/net7.0/WorkflowApi.Application.pdb
+/Users/rasecmc/Documents/GitHub/CRM-BACK/WorkflowApi/src/WorkflowApi.Application/bin/Debug/net7.0/WorkflowApi.Domain.dll
+/Users/rasecmc/Documents/GitHub/CRM-BACK/WorkflowApi/src/WorkflowApi.Application/bin/Debug/net7.0/WorkflowApi.Domain.pdb
+/Users/rasecmc/Documents/GitHub/CRM-BACK/WorkflowApi/src/WorkflowApi.Application/obj/Debug/net7.0/WorkflowApi.Application.csproj.AssemblyReference.cache
+/Users/rasecmc/Documents/GitHub/CRM-BACK/WorkflowApi/src/WorkflowApi.Application/obj/Debug/net7.0/WorkflowApi.Application.GeneratedMSBuildEditorConfig.editorconfig
+/Users/rasecmc/Documents/GitHub/CRM-BACK/WorkflowApi/src/WorkflowApi.Application/obj/Debug/net7.0/WorkflowApi.Application.AssemblyInfoInputs.cache
+/Users/rasecmc/Documents/GitHub/CRM-BACK/WorkflowApi/src/WorkflowApi.Application/obj/Debug/net7.0/WorkflowApi.Application.AssemblyInfo.cs
+/Users/rasecmc/Documents/GitHub/CRM-BACK/WorkflowApi/src/WorkflowApi.Application/obj/Debug/net7.0/WorkflowApi.Application.csproj.CoreCompileInputs.cache
+/Users/rasecmc/Documents/GitHub/CRM-BACK/WorkflowApi/src/WorkflowApi.Application/obj/Debug/net7.0/WorkflowApi.Application.dll
+/Users/rasecmc/Documents/GitHub/CRM-BACK/WorkflowApi/src/WorkflowApi.Application/obj/Debug/net7.0/refint/WorkflowApi.Application.dll
+/Users/rasecmc/Documents/GitHub/CRM-BACK/WorkflowApi/src/WorkflowApi.Application/obj/Debug/net7.0/WorkflowApi.Application.pdb
+/Users/rasecmc/Documents/GitHub/CRM-BACK/WorkflowApi/src/WorkflowApi.Application/obj/Debug/net7.0/ref/WorkflowApi.Application.dll
+/Users/rasecmc/Documents/GitHub/CRM-BACK/WorkflowApi/src/WorkflowApi.Application/obj/Debug/net7.0/WorkflowApi.Application.csproj.CopyComplete
