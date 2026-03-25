@@ -50,8 +50,8 @@ public class AzureBlobEvidenceStorageService : IEvidenceStorageService
 
         try
         {
-            // Sin acceso público al contenedor (compatible con cuentas que tienen "Allow Blob public access" desactivado)
-            await _containerClient.CreateIfNotExistsAsync(PublicAccessType.None, cancellationToken: cancellationToken);
+            // Crear contenedor solo si no existe (sin especificar acceso público; evita PublicAccessNotPermitted en cuentas con acceso público deshabilitado)
+            await _containerClient.CreateIfNotExistsAsync(cancellationToken: cancellationToken);
 
             var options = new BlobUploadOptions
             {

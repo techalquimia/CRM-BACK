@@ -1,5 +1,5 @@
 # Build
-FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
+FROM mcr.microsoft.com/dotnet/sdk:7.0 AS build
 WORKDIR /src
 
 COPY ["src/WorkflowApi.API/WorkflowApi.API.csproj", "WorkflowApi.API/"]
@@ -16,10 +16,10 @@ RUN dotnet build "WorkflowApi.API.csproj" -c Release -o /app/build
 
 # Publish
 FROM build AS publish
-RUN dotnet publish "WorkflowApi.API.csproj" -c Release -o /app/publish /p:UseAppHost=false
+RUN dotnet publish "WorkflowApi.API.csproj" -c Release -f net7.0 -o /app/publish /p:UseAppHost=false
 
 # Runtime
-FROM mcr.microsoft.com/dotnet/aspnet:8.0 AS final
+FROM mcr.microsoft.com/dotnet/aspnet:7.0 AS final
 WORKDIR /app
 EXPOSE 8080
 EXPOSE 8081

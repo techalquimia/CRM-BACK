@@ -1,7 +1,27 @@
 ﻿<Properties StartupConfiguration="{A1B2C3D4-E5F6-7890-ABCD-EF1234567890}|https">
-  <MonoDevelop.Ide.ItemProperties.WorkflowApi.API PreferredExecutionTarget="/Applications/Google Chrome.app" />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.Workbench ActiveDocument="src/WorkflowApi.API/Controllers/RouteEvidencesController.cs">
+    <Files>
+      <File FileName="src/WorkflowApi.API/Controllers/RouteEvidencesController.cs" Line="125" Column="53" />
+      <File FileName="src/WorkflowApi.Infrastructure/Services/AzureBlobEvidenceStorageService.cs" />
+      <File FileName="src/WorkflowApi.Application/DTOs/EvidenceResponse.cs" />
+      <File FileName="src/WorkflowApi.API/appsettings.json" />
+      <File FileName="src/WorkflowApi.API/Program.cs" />
+      <File FileName="src/WorkflowApi.API/appsettings.Development.json" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="WorkflowApi" expanded="True">
+            <Node name="WorkflowApi.API" selected="True">
+              <Node name="Controllers" expanded="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.ItemProperties.WorkflowApi.API PreferredExecutionTarget="/Applications/Google Chrome.app" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore>
       <Breakpoint file="/Users/rasecmc/Documents/GitHub/CRM-BACK/WorkflowApi/src/WorkflowApi.API/Controllers/RouteEvidencesController.cs" relfile="src/WorkflowApi.API/Controllers/RouteEvidencesController.cs" line="74" column="1" />
@@ -10,39 +30,6 @@
       <Breakpoint file="/Users/rasecmc/Documents/GitHub/CRM-BACK/WorkflowApi/src/WorkflowApi.API/Controllers/RouteEvidencesController.cs" relfile="src/WorkflowApi.API/Controllers/RouteEvidencesController.cs" line="94" column="1" />
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.Workbench ActiveDocument="src/WorkflowApi.Infrastructure/Services/AzureBlobEvidenceStorageService.cs">
-    <Files>
-      <File FileName="src/WorkflowApi.API/Controllers/RouteEvidencesController.cs" Line="123" Column="1" />
-      <File FileName="src/WorkflowApi.Infrastructure/Services/AzureBlobEvidenceStorageService.cs" Line="43" Column="41" />
-      <File FileName="src/WorkflowApi.Application/DTOs/EvidenceResponse.cs" Line="4" Column="1" />
-    </Files>
-    <Pads>
-      <Pad Id="ProjectPad">
-        <State name="__root__">
-          <Node name="WorkflowApi" expanded="True" selected="True">
-            <Node name="WorkflowApi.API">
-              <Node name="Controllers" expanded="True" />
-              <Node name="Models" expanded="True" />
-              <Node name="appsettings.json" expanded="True" />
-            </Node>
-            <Node name="WorkflowApi.Application">
-              <Node name="Dependencies" expanded="True" />
-              <Node name="DTOs" expanded="True" />
-              <Node name="Interfaces" expanded="True" />
-            </Node>
-            <Node name="WorkflowApi.Infrastructure">
-              <Node name="Services" expanded="True" />
-            </Node>
-          </Node>
-        </State>
-      </Pad>
-      <Pad Id="MonoDevelop.Debugger.WatchPad">
-        <State>
-          <Value>unitExists</Value>
-          <Value>imageUrl</Value>
-        </State>
-      </Pad>
-    </Pads>
-  </MonoDevelop.Ide.Workbench>
 </Properties>

@@ -1,22 +1,20 @@
 services:
   db:
-    image: mysql:8.0
-    container_name: workflow-mysql
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    container_name: workflow-sqlserver
     environment:
-      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD:-Facil123.}
-      MYSQL_DATABASE: ${MYSQL_DATABASE:-WorkflowDb}
-      MYSQL_USER: ${MYSQL_USER:-workflow}
-      MYSQL_PASSWORD: ${MYSQL_PASSWORD:-Facil123.}
+      ACCEPT_EULA: "Y"
+      MSSQL_SA_PASSWORD: ${SQLSERVER_SA_PASSWORD:-YourStrong@Passw0rd}
     ports:
-      - "${MYSQL_PORT:-3306}:3306"
+      - "${SQLSERVER_PORT:-1433}:1433"
     volumes:
-      - workflow_mysql_data:/var/lib/mysql
+      - workflow_sqlserver_data:/var/opt/mssql
     healthcheck:
-      test: ["CMD-SHELL", "mysqladmin ping -h localhost -uroot -p$$MYSQL_ROOT_PASSWORD || exit 1"]
+      test: ["CMD-SHELL", "/opt/mssql-tools18/bin/sqlcmd -S localhost -U sa -P $$MSSQL_SA_PASSWORD -Q \"SELECT 1\" -C || exit 1"]
       interval: 10s
       timeout: 5s
-      retries: 5
-      start_period: 30s
+      retries: 10
+      start_period: 60s
 
   api:
     build:
@@ -26,7 +24,7 @@ services:
     ports:
       - "${API_PORT:-8080}:8080"
     environment:
-      ConnectionStrings__DefaultConnection: "Server=db;Port=3306;Database=${MYSQL_DATABASE:-WorkflowDb};User=root;Password=${MYSQL_ROOT_PASSWORD:-Facil123.};"
+      ConnectionStrings__DefaultConnection: "Server=db,1433;Database=${SQLSERVER_DATABASE:-WorkflowDb};User Id=sa;Password=${SQLSERVER_SA_PASSWORD:-YourStrong@Passw0rd};TrustServerCertificate=True;"
       ASPNETCORE_URLS: "http://+:8080"
       ASPNETCORE_ENVIRONMENT: Production
     depends_on:
@@ -35,4 +33,4 @@ services:
     restart: unless-stopped
 
 volumes:
-  workflow_mysql_data:
+  workflow_sqlserver_data:

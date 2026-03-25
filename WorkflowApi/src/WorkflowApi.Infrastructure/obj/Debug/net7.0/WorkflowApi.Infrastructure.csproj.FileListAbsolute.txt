@@ -11,9 +11,9 @@
 /Users/rasecmc/Documents/GitHub/CRM-BACK/WorkflowApi/src/WorkflowApi.Infrastructure/obj/Debug/net7.0/WorkflowApi.Infrastructure.AssemblyInfoInputs.cache
 /Users/rasecmc/Documents/GitHub/CRM-BACK/WorkflowApi/src/WorkflowApi.Infrastructure/obj/Debug/net7.0/WorkflowApi.Infrastructure.AssemblyInfo.cs
 /Users/rasecmc/Documents/GitHub/CRM-BACK/WorkflowApi/src/WorkflowApi.Infrastructure/obj/Debug/net7.0/WorkflowApi.Infrastructure.csproj.CoreCompileInputs.cache
+/Users/rasecmc/Documents/GitHub/CRM-BACK/WorkflowApi/src/WorkflowApi.Infrastructure/obj/Debug/net7.0/WorkflowApi.Infrastructure.csproj.CopyComplete
 /Users/rasecmc/Documents/GitHub/CRM-BACK/WorkflowApi/src/WorkflowApi.Infrastructure/obj/Debug/net7.0/WorkflowApi.Infrastructure.dll
 /Users/rasecmc/Documents/GitHub/CRM-BACK/WorkflowApi/src/WorkflowApi.Infrastructure/obj/Debug/net7.0/refint/WorkflowApi.Infrastructure.dll
 /Users/rasecmc/Documents/GitHub/CRM-BACK/WorkflowApi/src/WorkflowApi.Infrastructure/obj/Debug/net7.0/WorkflowApi.Infrastructure.pdb
 /Users/rasecmc/Documents/GitHub/CRM-BACK/WorkflowApi/src/WorkflowApi.Infrastructure/obj/Debug/net7.0/WorkflowApi.Infrastructure.genruntimeconfig.cache
 /Users/rasecmc/Documents/GitHub/CRM-BACK/WorkflowApi/src/WorkflowApi.Infrastructure/obj/Debug/net7.0/ref/WorkflowApi.Infrastructure.dll
-/Users/rasecmc/Documents/GitHub/CRM-BACK/WorkflowApi/src/WorkflowApi.Infrastructure/obj/Debug/net7.0/WorkflowApi.Infrastructure.csproj.CopyComplete
