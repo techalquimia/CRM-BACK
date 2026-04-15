@@ -8,8 +8,9 @@
 /Users/rasecmc/Documents/GitHub/CRM-BACK/WorkflowApi/src/WorkflowApi.Application/obj/Debug/net7.0/WorkflowApi.Application.AssemblyInfoInputs.cache
 /Users/rasecmc/Documents/GitHub/CRM-BACK/WorkflowApi/src/WorkflowApi.Application/obj/Debug/net7.0/WorkflowApi.Application.AssemblyInfo.cs
 /Users/rasecmc/Documents/GitHub/CRM-BACK/WorkflowApi/src/WorkflowApi.Application/obj/Debug/net7.0/WorkflowApi.Application.csproj.CoreCompileInputs.cache
-/Users/rasecmc/Documents/GitHub/CRM-BACK/WorkflowApi/src/WorkflowApi.Application/obj/Debug/net7.0/WorkflowApi.Application.csproj.CopyComplete
 /Users/rasecmc/Documents/GitHub/CRM-BACK/WorkflowApi/src/WorkflowApi.Application/obj/Debug/net7.0/WorkflowApi.Application.dll
 /Users/rasecmc/Documents/GitHub/CRM-BACK/WorkflowApi/src/WorkflowApi.Application/obj/Debug/net7.0/refint/WorkflowApi.Application.dll
 /Users/rasecmc/Documents/GitHub/CRM-BACK/WorkflowApi/src/WorkflowApi.Application/obj/Debug/net7.0/WorkflowApi.Application.pdb
 /Users/rasecmc/Documents/GitHub/CRM-BACK/WorkflowApi/src/WorkflowApi.Application/obj/Debug/net7.0/ref/WorkflowApi.Application.dll
+/Users/rasecmc/Documents/GitHub/CRM-BACK/WorkflowApi/src/WorkflowApi.Application/obj/Debug/net7.0/WorkflowApi.Application.sourcelink.json
+/Users/rasecmc/Documents/GitHub/CRM-BACK/WorkflowApi/src/WorkflowApi.Application/obj/Debug/net7.0/Workflow.ADAB694D.Up2Date

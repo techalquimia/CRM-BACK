@@ -1,7 +1,6 @@
 /Users/rasecmc/Documents/GitHub/CRM-BACK/WorkflowApi/src/WorkflowApi.Domain/bin/Debug/net7.0/WorkflowApi.Domain.deps.json
 /Users/rasecmc/Documents/GitHub/CRM-BACK/WorkflowApi/src/WorkflowApi.Domain/bin/Debug/net7.0/WorkflowApi.Domain.dll
 /Users/rasecmc/Documents/GitHub/CRM-BACK/WorkflowApi/src/WorkflowApi.Domain/bin/Debug/net7.0/WorkflowApi.Domain.pdb
-/Users/rasecmc/Documents/GitHub/CRM-BACK/WorkflowApi/src/WorkflowApi.Domain/obj/Debug/net7.0/WorkflowApi.Domain.csproj.AssemblyReference.cache
 /Users/rasecmc/Documents/GitHub/CRM-BACK/WorkflowApi/src/WorkflowApi.Domain/obj/Debug/net7.0/WorkflowApi.Domain.GeneratedMSBuildEditorConfig.editorconfig
 /Users/rasecmc/Documents/GitHub/CRM-BACK/WorkflowApi/src/WorkflowApi.Domain/obj/Debug/net7.0/WorkflowApi.Domain.AssemblyInfoInputs.cache
 /Users/rasecmc/Documents/GitHub/CRM-BACK/WorkflowApi/src/WorkflowApi.Domain/obj/Debug/net7.0/WorkflowApi.Domain.AssemblyInfo.cs
@@ -10,3 +9,4 @@
 /Users/rasecmc/Documents/GitHub/CRM-BACK/WorkflowApi/src/WorkflowApi.Domain/obj/Debug/net7.0/refint/WorkflowApi.Domain.dll
 /Users/rasecmc/Documents/GitHub/CRM-BACK/WorkflowApi/src/WorkflowApi.Domain/obj/Debug/net7.0/WorkflowApi.Domain.pdb
 /Users/rasecmc/Documents/GitHub/CRM-BACK/WorkflowApi/src/WorkflowApi.Domain/obj/Debug/net7.0/ref/WorkflowApi.Domain.dll
+/Users/rasecmc/Documents/GitHub/CRM-BACK/WorkflowApi/src/WorkflowApi.Domain/obj/Debug/net7.0/WorkflowApi.Domain.sourcelink.json

@@ -76,7 +76,25 @@ var app = builder.Build();
 using (var scope = app.Services.CreateScope())
 {
     var db = scope.ServiceProvider.GetRequiredService<WorkflowDbContext>();
-    await db.Database.MigrateAsync();
+    // SQL Server puede tardar en estar listo (especialmente con docker).
+    // Reintentamos la migración para evitar que la app se caiga.
+    const int maxAttempts = 12;
+    var attempt = 0;
+    while (true)
+    {
+        attempt++;
+        try
+        {
+            await db.Database.MigrateAsync();
+            break;
+        }
+        catch (Exception ex) when (ex is Microsoft.Data.SqlClient.SqlException)
+        {
+            Console.WriteLine($"DB migrate failed (attempt {attempt}/{maxAttempts}): {ex.Message}");
+            if (attempt >= maxAttempts) throw;
+            await Task.Delay(TimeSpan.FromSeconds(5));
+        }
+    }
 }
 
 app.UseSwagger();
