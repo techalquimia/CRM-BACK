@@ -1,0 +1,40 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "netcoredbg",
+            "type": "coreclr",
+            "request": "launch",
+            "preLaunchTask": "build",
+            "program": "${workspaceFolder}/WorkflowApi/src/WorkflowApi.API/bin/Debug/net8.0/WorkflowApi.API.dll",
+            "cwd": "${workspaceFolder}/WorkflowApi/src/WorkflowApi.API",
+            "console": "internalConsole",
+            "pipeTransport": {
+                "pipeCwd": "${workspaceFolder}",
+                "pipeProgram": "bash",
+                "pipeArgs": [
+                    "-c"
+                ],
+                "debuggerPath": "/Users/rasecmc/netcoredbg/netcoredbg",
+                "debuggerArgs": [
+                    "--interpreter=vscode"
+                ],
+                "quoteArgs": true
+            },
+            "env": {
+                "DOTNET_ENVIRONMENT": "Development",
+                "ASPNETCORE_URLS": "http://+:8080"
+            }
+        },
+        {
+            "type": "chrome",
+            "request": "launch",
+            "name": "Launch Chrome against localhost",
+            "url": "http://localhost:8080",
+            "webRoot": "${workspaceFolder}"
+        }
+    ]
+}
